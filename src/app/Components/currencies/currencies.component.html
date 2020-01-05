@@ -1,0 +1,28 @@
+<!--Have to loop through array of currencies-->
+<!--want each item to be a component, so we use the app-currency-item-->
+<!--passing in an attribute to the element, using [currency]="currency", one way binding-->
+<!--
+<app-currency-item *ngFor="let currency of currencies" [currency]="currency">
+</app-currency-item>
+-->
+
+<div >
+
+    Base Currency: {{ currency.base }}
+    <input #amt (change) = "userInput(amt.value)" type="text" placeholder="0.00" > {{ userValue }}
+    <input type="button" value="convert">
+    <br>
+    
+    <!--Here is where the different currencies would be added-->
+    <!--
+    USA {{ currency.rates.USD }} <br>
+    Canada {{ currency.rates.CAD }} <br>
+    Great British Pound {{ currency.rates.GBP }} <br>
+    Japan {{ currency.rates.JPY }}
+    <br>
+    -->
+
+    Currency converted To USD {{ result | currency}}
+
+    
+</div>
