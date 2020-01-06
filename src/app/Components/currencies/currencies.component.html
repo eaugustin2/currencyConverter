@@ -8,7 +8,7 @@
 
 <div >
 
-    Base Currency: {{ currency.base }}
+    Base Currency: {{ currency.base }} <select></select>
     <input #amt (change) = "userInput(amt.value)" type="text" placeholder="0.00" > {{ userValue }}
     <input type="button" value="convert">
     <br>
@@ -22,7 +22,8 @@
     <br>
     -->
 
-    Currency converted To USD {{ result | currency}}
+    Currency converted To USD {{ result | currency:"USD":"symbol"}}
+    <p>as of {{ currency.date }}</p>
 
     
 </div>
