@@ -8,9 +8,12 @@
 
 <div >
 
-    Base Currency: {{ currency.base }} <select></select>
-    <input #amt (change) = "userInput(amt.value)" type="text" placeholder="0.00" > {{ userValue }}
-    <input type="button" value="convert">
+    Base Currency:  
+    <input #amt (change) = "userInput(amt.value)" type="text" placeholder="0.00" > 
+    
+    <select>
+        <option [value]="rate"  *ngFor="let rate of ratesArray">{{ rate }} </option>
+    </select>
     <br>
     
     <!--Here is where the different currencies would be added-->
@@ -22,7 +25,13 @@
     <br>
     -->
 
-    Currency converted To USD {{ result | currency:"USD":"symbol"}}
+    Currency converted to:  {{ result | currency:"USD":"symbol"}} 
+    <select>
+        <option [value]="rate" *ngFor="let rate of ratesArray">
+            {{ rate }}
+        </option>
+    </select> <br>
+    <input type="button" value="convert">
     <p>as of {{ currency.date }}</p>
 
     

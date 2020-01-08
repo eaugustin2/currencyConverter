@@ -20,6 +20,7 @@ export class CurrenciesComponent implements OnInit {
   exchangeRate:number = 0;
   exchangeFrom:number;
   exchangeTo:number;
+  ratesArray = this.currency.ratesArray;
 
   constructor(private currencyService:CurrencyService) { }
 
