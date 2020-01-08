@@ -41,25 +41,20 @@ export class CurrenciesComponent implements OnInit {
   Its better to use #value method to access user input than using event object
   */
 
-   userInput(value:number):void {
+   userInput(value:number, from:string, to:string):void {
+     
 
     this.rates = new Rates(this.currency.rates.CAD,this.currency.rates.HKD,this.currency.rates.ISK,this.currency.rates.PHP,this.currency.rates.DKK,this.currency.rates.HUF,this.currency.rates.CZK,this.currency.rates.AUD,this.currency.rates.RON,this.currency.rates.SEK,this.currency.rates.IDR,this.currency.rates.INR,this.currency.rates.BRL,this.currency.rates.RUB,this.currency.rates.HRK,this.currency.rates.JPY,this.currency.rates.THB,this.currency.rates.CHF,this.currency.rates.SGD,this.currency.rates.PLN,this.currency.rates.BGN,this.currency.rates.TRY,this.currency.rates.CNY,this.currency.rates.NOK,this.currency.rates.NZD,this.currency.rates.ZAR,this.currency.rates.USD,this.currency.rates.MXN,this.currency.rates.ILS,this.currency.rates.GBP,this.currency.rates.KRW,this.currency.rates.MYR);
 
-    var base = this.currency.base;
-    console.log("This is the base: " + base);
-
-    this.exchangeFrom = this.rates.getBaseRate(base);
-
-    //need another for exchange to
-
-    console.log("this is the amount value: " + value);
-
-    //console.log("the value for base 1 is: " + this.rates.getBaseRate("JPY"));
-
-    console.log("The value for base is: " + this.rates.getBaseRate(base));
-
+    //var base = this.currency.base;
     
-    this.exchangeTo = this.rates.getBaseRate("USD");
+
+    //this.exchangeFrom = this.rates.getRate(base);
+    this.exchangeFrom = this.rates.getRate(from);
+    console.log("value of from: " + from);
+
+    this.exchangeTo = this.rates.getRate(to);
+    console.log("value of to: " + to);
 
     this.exchangeRate = this.exchangeTo/this.exchangeFrom;
 
@@ -67,6 +62,10 @@ export class CurrenciesComponent implements OnInit {
     //Since the base is only 3 letters we now need a way to get this specific rate;
     //could use a hashmap in rates, use the abbreviations as keys, to get that particular rate
 
+  }
+
+  selectCurrency(value:string) {
+    console.log("The currency you selected is: " + value);
   }
 
 }

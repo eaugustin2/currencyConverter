@@ -115,12 +115,9 @@ export class Rates{
         }
         */
 
-        public getBaseRate(base:string):number{
-                console.log("value of base inside getBaseRate: " + base);
-                console.log("Does the map have the base: " + this.rateMap.has(base));
-                console.log("getBaseRate method");
-                console.log("value retrieved from rateMap: " + this.rateMap.get(base));
-                return this.rateMap.get(base);
+        public getRate(currencyTag:string):number{
+               
+                return this.rateMap.get(currencyTag);
         }
         
 

@@ -8,30 +8,23 @@
 
 <div >
 
-    Base Currency:  
-    <input #amt (change) = "userInput(amt.value)" type="text" placeholder="0.00" > 
+    Base Currency:
+
+    <input #amt (keyup.enter) = "userInput(amt.value, fromOption.value, toOption.value)" type="text" placeholder="0.00" > 
     
-    <select>
-        <option [value]="rate"  *ngFor="let rate of ratesArray">{{ rate }} </option>
+    <select #fromOption>
+        <option  [value]="rate"  *ngFor="let rate of ratesArray">{{ rate }} </option>
     </select>
-    <br>
     
-    <!--Here is where the different currencies would be added-->
-    <!--
-    USA {{ currency.rates.USD }} <br>
-    Canada {{ currency.rates.CAD }} <br>
-    Great British Pound {{ currency.rates.GBP }} <br>
-    Japan {{ currency.rates.JPY }}
     <br>
-    -->
 
     Currency converted to:  {{ result | currency:"USD":"symbol"}} 
-    <select>
+    <select #toOption>
         <option [value]="rate" *ngFor="let rate of ratesArray">
             {{ rate }}
         </option>
     </select> <br>
-    <input type="button" value="convert">
+   
     <p>as of {{ currency.date }}</p>
 
     
