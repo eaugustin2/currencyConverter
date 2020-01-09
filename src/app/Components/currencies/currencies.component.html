@@ -6,26 +6,29 @@
 </app-currency-item>
 -->
 
-<div >
+<div id="outerShell">
+    <div class="currencyComponentShell" id="topPortion">
 
-    Base Currency:
-
-    <input #amt (keyup.enter) = "userInput(amt.value, fromOption.value, toOption.value)" type="text" placeholder="0.00" > 
+        Base Currency:
     
-    <select #fromOption>
-        <option  [value]="rate"  *ngFor="let rate of ratesArray">{{ rate }} </option>
-    </select>
+        <input id="text" #amt (keyup.enter) = "userInput(amt.value, fromOption.value, toOption.value)" type="text" placeholder="0.00" > 
+        
+        <select #fromOption>
+            <option  [value]="rate"  *ngFor="let rate of ratesArray">{{ rate }} </option>
+        </select>    
+    </div>
     
-    <br>
-
-    Currency converted to:  {{ result | currency:"USD":"symbol"}} 
-    <select #toOption>
-        <option [value]="rate" *ngFor="let rate of ratesArray">
-            {{ rate }}
-        </option>
-    </select> <br>
-   
-    <p>as of {{ currency.date }}</p>
-
+    <div class="currencyComponentShell">
+        <br>
     
+        Currency converted to:  {{ result | currency:"USD":"symbol"}} 
+        <select #toOption>
+            <option [value]="rate" *ngFor="let rate of ratesArray">
+                {{ rate }}
+            </option>
+        </select> <br>
+        <input type="button" value="convert" (click) = "userInput(amt.value, fromOption.value, toOption.value)">
+       
+        <p>as of {{ currency.date }}</p>
+    </div>
 </div>

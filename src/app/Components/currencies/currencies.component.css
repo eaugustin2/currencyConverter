@@ -1,0 +1,30 @@
+.currencyComponentShell{
+    text-align: center;
+    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}
+
+#topPortion{
+    
+    width: auto;
+    
+}
+
+input {
+    font-size: large;
+    border: none;
+    color: blue;
+    background: transparent;
+}
+
+#text{
+    border-bottom: black 1px solid;
+    color: ivory;
+}
+
+#text:focus{
+    outline-width:0;
+}
+
+select{
+    border: none;
+}

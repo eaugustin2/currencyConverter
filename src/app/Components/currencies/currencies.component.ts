@@ -21,6 +21,7 @@ export class CurrenciesComponent implements OnInit {
   exchangeFrom:number;
   exchangeTo:number;
   ratesArray = this.currency.ratesArray;
+  currencySign = "";
 
   constructor(private currencyService:CurrencyService) { }
 
@@ -57,6 +58,8 @@ export class CurrenciesComponent implements OnInit {
     console.log("value of to: " + to);
 
     this.exchangeRate = this.exchangeTo/this.exchangeFrom;
+
+    this.currencySign = to;
 
     this.result = value * this.exchangeRate;
     //Since the base is only 3 letters we now need a way to get this specific rate;

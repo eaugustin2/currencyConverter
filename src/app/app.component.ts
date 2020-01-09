@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string = 'currencyConverter'; //declaring a title variable of type string
+  title:string = 'Currency Converter'; //declaring a title variable of type string
 }
