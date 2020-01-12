@@ -1,12 +1,18 @@
 .currencyComponentShell{
     text-align: center;
-    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+    color:mediumblue;
+    font-size: 25px;
 }
 
 #topPortion{
-    
+    color: white;
     width: auto;
-    
+    background: linear-gradient(110deg, midnightblue 60%, mediumblue 60%);
+    height: 100px;
+}
+
+#topPortion select{
+    color: white;
 }
 
 input {
@@ -17,7 +23,7 @@ input {
 }
 
 #text{
-    border-bottom: black 1px solid;
+    border-bottom: white 2px solid;
     color: ivory;
 }
 
@@ -27,4 +33,7 @@ input {
 
 select{
     border: none;
+    background: transparent;
+    font-size: 16px;
+    color:mediumblue;
 }

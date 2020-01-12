@@ -11,11 +11,12 @@
 
         Base Currency:
     
-        <input id="text" #amt (keyup.enter) = "userInput(amt.value, fromOption.value, toOption.value)" type="text" placeholder="0.00" > 
         
+        <input id="text" #amt (keyup.enter) = "userInput(amt.value, fromOption.value, toOption.value)" type="text" placeholder="0.00" > 
         <select #fromOption>
             <option  [value]="rate"  *ngFor="let rate of ratesArray">{{ rate }} </option>
-        </select>    
+        </select> 
+           
     </div>
     
     <div class="currencyComponentShell">
